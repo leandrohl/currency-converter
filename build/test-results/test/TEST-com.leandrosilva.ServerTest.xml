@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.leandrosilva.ServerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-08-15T19:16:13.454Z" hostname="MacBook-Pro-de-Leandro.local" time="0.502">
+  <properties/>
+  <testcase name="test root endpoint" classname="com.leandrosilva.ServerTest" time="0.499"/>
+  <system-out><![CDATA[2026-08-15 16:16:13.874 [DefaultDispatcher-worker-2 @call-context#3] INFO  io.ktor.test - No ktor.deployment.watch patterns specified, automatic reload is not active.
+2026-08-15 16:16:13.912 [DefaultDispatcher-worker-2 @call-context#3] INFO  io.ktor.test - Application started in 0.045 seconds.
+2026-08-15 16:16:13.913 [DefaultDispatcher-worker-3 @coroutine#5] INFO  io.ktor.test - Responding at http://localhost:80
+2026-08-15 16:16:13.913 [DefaultDispatcher-worker-3 @coroutine#5] INFO  io.ktor.test - Responding at https://localhost:443
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
