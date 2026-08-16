@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/oops_houve_uma_falha" />
+
+    <TextView
+        android:id="@+id/btnSubtitle"
+        android:layout_width="match_parent"
+        android:text="@string/n_o_foi_poss_vel_carregar_a_lista_de_tipos_monet_rios_verique_sua_conexao_com_a_internet_e_tente_novamente"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="36dp"
+        android:id="@+id/btnTryAgain"
+        android:text="@string/tentar_novamente" />
+</LinearLayout>
