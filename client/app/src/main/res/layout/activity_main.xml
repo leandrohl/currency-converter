@@ -68,15 +68,30 @@
                 android:layout_marginTop="36dp"
                 android:orientation="horizontal">
 
-                <EditText
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="4"
-                    android:minHeight="48dp"
-                    android:importantForAutofill="no"
-                    android:inputType="number"
-                    tools:text="R$ 5000,00"
-                    android:background="@android:color/transparent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvFromCurrencySymbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/etFromExchangeValue"
+                        android:layout_width="match_parent"
+                        android:minHeight="48dp"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:text="@string/initial_value"
+                        android:background="@android:color/transparent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -84,10 +99,10 @@
                     android:src="@drawable/img_divider" />
 
                 <Spinner
+                    android:id="@+id/spnFromCurrency"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:padding="8dp"
                     tools:listitem="@layout/item_currency_type"
                     android:background="@android:color/transparent" />
 
@@ -118,15 +133,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivArrowsExchange">
 
-                <EditText
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="4"
-                    android:minHeight="48dp"
-                    android:inputType="number"
-                    tools:text="R$ 5000,00"
-                    android:importantForAutofill="no"
-                    android:background="@android:color/transparent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvToCurrencySymbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvToExchangeValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:minHeight="48dp"
+                        android:text="@string/initial_value"
+                        />
+                </LinearLayout>
+
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -138,7 +168,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:padding="8dp"
+                    android:id="@+id/spnToCurrency"
                     tools:listitem="@layout/item_currency_type"
                     android:background="@android:color/transparent" />
 
