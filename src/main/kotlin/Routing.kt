@@ -1,5 +1,10 @@
 package com.leandrosilva
 
+import com.leandrosilva.model.CurrencyTypesResult
+import com.leandrosilva.model.ExchangeRateResult
+import com.leandrosilva.model.commonCurrencyTypes
+import com.leandrosilva.model.currencyConversionMap
+import com.leandrosilva.model.orUnknown
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -16,17 +21,25 @@ fun Application.configureRouting() {
 
         // conversão  de valores, moeda atual => moeda alvo, taxa de conversão entre essas moesdas
         get("/exchange_rate/{from}/{to}") {
-            val fromCurrency = call.request.queryParameters["from"]
-            val toCurrency = call.request.queryParameters["to"]
+            val from = call.parameters["from"] ?: return@get call.respondText(
+                status = io.ktor.http.HttpStatusCode.BadRequest,
+                text = "Não foi possível obter o acrônimo da moeda atual."
+            )
 
-            if (fromCurrency == null || toCurrency == null) {
-                call.respondText("Missing 'from' or 'to' query parameters", status = io.ktor.http.HttpStatusCode.BadRequest)
-                return@get
-            }
+            val to = call.parameters["to"] ?: return@get call.respondText(
+                status = io.ktor.http.HttpStatusCode.BadRequest,
+                text = "Não foi possível obter o acrônimo da moeda atual."
+            )
 
-            val exchangeRate = 1.23 // Exemplo de taxa de câmbio
+            call.respond(
+                ExchangeRateResult(
+                    from = from.orUnknown(),
+                    to = to.orUnknown(),
+                    exchangeRate = currencyConversionMap[from]?.get(to) ?: 0.0
+                )
+            )
 
-            call.respondText("Exchange rate from $fromCurrency to $toCurrency is $exchangeRate")
+
         }
 
     }

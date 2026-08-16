@@ -1,4 +1,4 @@
-package com.leandrosilva
+package com.leandrosilva.model
 
 import kotlinx.serialization.Serializable
 
